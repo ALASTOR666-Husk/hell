@@ -7,6 +7,25 @@
 ---
 ![Шаг 2](./photo/2.png)
 
+# 3 Portainer
+
+1. Вариант с томами (с сохранением данных) в Linux/WSL 2.0/Mac 
+(docker run -d \
+  --name portainer \
+  -p 9000:9000 \
+  -p 9443:9443 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  --restart unless-stopped \
+  portainer/portainer-ce:latest)
+
+---
+![Шаг 1](./photo/3RE1.png)
+
+2. Подключится через браузер ( http://localhost:9000/ ) придумать пароль из 8 - 12 символов
+---
+![Шаг 2](./photo/3RE2.png)
+
 # 4 Тест скорости
 
 1. Спид тест в Докере (docker run -d -p 158:80 --name speedtest-server adolfintel/speedtest)
@@ -42,6 +61,24 @@
 3. Откраем в браузере ( http://localhost:8082/ )
 ---
 ![Шаг 3](./photo/7.png)
+
+# 6 MySQL база данных
+
+1. Запуск MySQL
+( docker run -d \
+  --name my-mysql \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=mydb \
+  -e MYSQL_USER=user \
+  -e MYSQL_PASSWORD=password \
+  mysql:8 )
+
+2. Подключиться ( docker exec -it my-mysql mysql -u root -p ) пароль - rootpassword
+---
+![Шаг 1,2](./photo/26.png)
+
+3. Выйти через ( exit )
 
 # 7 PostgresSQL
 
@@ -126,3 +163,63 @@
 ---
 ![Шаг 1,2](./photo/16.png)
 
+# 14 Metasploitable2 docker
+
+1. Установить докер-образ ( docker pull tleemcjr/metasploitable2 )
+---
+![Шаг 1](./photo/17.png)
+
+2. Загрузить образ, создать и запустить контейнер, войти в него ( docker run --name metasploitable2 -it tleemcjr/metasploitable2 ) 
+
+3. Выйти из него через ( exit )
+---
+![Шаг 2,3](./photo/18.png)
+
+4. Удалим контейнер ( docker rm metasploitable2 ) и образ ( docker rmi tleemcjr/metasploitable2 )
+---
+![Шаг 4](./photo/19.png)
+
+# 15 Alt Linux в Docker
+
+1. Загрузить готовый образ Alt ( docker pull alt:sisyphus )
+
+2. Запустить и использовать ( docker run -ti --rm --name alt alt:sisyphus /bin/bash ) 
+
+3. Установить приложение Fastfetch в контейнере ( apt-get update && apt-get install fastfetch )
+
+---
+![Шаг 1,2,3](./photo/20.png)
+
+4. Запустить Fastfetch ( fastfetch ) и выйдем через ( exit )
+---
+![Шаг 4](./photo/21.png)
+
+# 16 Python для запуска скриптов
+
+1. Создадим Python скрипт ( echo "print('Hello from Python in Docker!')" > script.py )
+
+2. Запускаем скрипт в контейнере Python ( docker run --rm -v $(pwd):/app python:alpine python /app/script.py )
+
+3. Интерактивный Python ( docker run -it --rm python:alpine python )
+---
+![Шаг 4](./photo/22.png)
+
+# 17 Node.js для JavaScript
+
+1. Запустить Node.js REPL ( docker run -it --rm node:alpine node )
+
+2. Запустить скрипт ( console.log('Hello from Docker!'); )
+
+3. Выйти из консоли ( .exit )
+---
+![Шаг 1,2,3](./photo/23.png)
+
+# 18 База данных Redis
+
+1. Запуск Redis ( docker run -d --name my-redis -p 6379:6379 redis:alpine )
+
+2. Подключиться к Redis CLI ( docker exec -it my-redis redis-cli )
+---
+![Шаг 1,2](./photo/24.png)
+
+# 20
