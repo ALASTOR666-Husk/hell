@@ -29,7 +29,7 @@ docker run -d -p 8088:80 --name welcome-to-docker docker/welcome-to-docker
 
 
 
-![Задание 2](./SUPERFOTO/1.png)
+![Задание 2](./MYNOTES/SUPERFOTO/1.png)
 
 ---
 
