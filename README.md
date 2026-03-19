@@ -29,7 +29,7 @@ docker run -d -p 8088:80 --name welcome-to-docker docker/welcome-to-docker
 
 
 
-![Задание 2](./SUPERPHOTOS/1.png)
+![Задание 2](./SUPERFOTO/1.png)
 
 ---
 
@@ -39,7 +39,7 @@ docker run -d -p 8088:80 --name welcome-to-docker docker/welcome-to-docker
 
 
 
-![Задание 3](./SUPERPHOTOS/2.png)
+![Задание 3](./SUPERFOTO/2.png)
 
 ---
 
@@ -60,7 +60,7 @@ uname -a
 
 
 
-![Задание 5](./SUPERPHOTOS/3.png)
+![Задание 5](./SUPERFOTO/3.png)
 
 ---
 
@@ -73,7 +73,7 @@ top
 
 
 
-![Задание 6](./SUPERPHOTOS/4.png)
+![Задание 6](./SUPERFOTO/4.png)
 
 ---
 
@@ -107,4 +107,4 @@ fastfetch
 
 > 
 
-![Задание 9](./SUPERPHOTOS/5.png)
+![Задание 9](./SUPERFOTO/5.png)
