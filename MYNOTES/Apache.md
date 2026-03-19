@@ -221,5 +221,3 @@
 2. Подключиться к Redis CLI ( docker exec -it my-redis redis-cli )
 ---
 ![Шаг 1,2](./photo/24.png)
-
-# 20
