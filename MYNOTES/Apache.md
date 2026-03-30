@@ -331,3 +331,33 @@ fastfetch
 2. Подключиться к Redis CLI ( docker exec -it my-redis redis-cli )
 ---
 ![Шаг 1,2](./photo/24.png)
+
+# 19 HTTP-сервер для раздачи файлов
+
+1. Создаем тестовый файл echo “Hello from HTTP server” > test.txt
+2. Запускаем простой HTTP сервер
+(docker run -d \
+  --name http-server \
+  -p 8082:80 \
+  -v $(pwd):/usr/share/nginx/html \
+  nginx:alpine)
+
+3. Проверяем (curl http://localhost:8082/test.txt)
+---
+![Шаг 1,2,3](./photo/33.png)
+
+# 20 Файловый обменник
+
+1. Запускаем simple-http-server для раздачи файлов
+(docker run -d \
+  --name file-server \
+  -p 8084:80 \
+  -v $(pwd):/srv \
+  halverneus/static-file-server:latest)
+
+---
+![Шаг 1](./photo/34.png)
+
+2. Открываем http://localhost:8084/
+---
+![Шаг 2](./photo/35.png)
